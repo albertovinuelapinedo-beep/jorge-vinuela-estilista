@@ -301,3 +301,60 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
 .mobile-install svg { width:17px; height:17px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
 .mobile-install:focus-visible { outline:2px solid var(--leaf); outline-offset:2px; }
 @media (max-width:820px) { .mobile-install { display:flex; } }
+
+
+/* Homepage affiliate selection */
+.home-picks { background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.home-picks-heading { display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:end; margin-bottom:34px; }
+.home-picks-heading h2 { color:var(--green-dark); font-size:clamp(42px,4.5vw,62px); line-height:1.02; margin:18px 0 0; }
+.home-picks-heading h2 em { color:var(--leaf); }
+.home-picks-intro { max-width:475px; justify-self:end; }
+.home-picks-intro p { color:var(--muted); font-size:14px; line-height:1.9; margin:0 0 13px; }
+.home-picks-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:stretch; }
+.home-pick-card { display:flex; flex-direction:column; min-width:0; background:var(--white); border:1px solid var(--line); transition:transform .2s ease,box-shadow .2s ease; }
+.home-pick-card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(35,48,38,.08); }
+.home-pick-image { display:grid; place-items:center; position:relative; min-height:210px; height:210px; padding:24px; overflow:hidden; background:var(--paper-deep); }
+.home-pick-image img { width:100%; height:100%; object-fit:contain; transition:transform .25s ease; }
+.home-pick-card:hover .home-pick-image img { transform:scale(1.035); }
+.home-pick-image img[hidden] { display:none; }
+.home-pick-image.image-unavailable::after { content:"Producto en Amazon"; position:absolute; inset:auto 0 0; padding:10px; color:var(--muted); font-size:11px; text-align:center; background:linear-gradient(transparent,rgba(239,237,229,.95)); }
+.home-pick-badge { position:absolute; left:12px; top:12px; z-index:1; background:var(--white); border:1px solid var(--line); padding:6px 8px; color:var(--green); font-size:9px; font-weight:800; letter-spacing:.09em; }
+.home-pick-copy { display:flex; flex-direction:column; align-items:flex-start; flex:1; padding:22px; }
+.home-pick-brand { margin:0 0 6px; color:var(--muted); font-size:10px; letter-spacing:.15em; font-weight:800; }
+.home-pick-copy h3 { margin:0 0 10px; color:var(--green-dark); font:400 25px/1.12 var(--serif); letter-spacing:-.025em; }
+.home-pick-copy > p:not(.home-pick-brand) { margin:0 0 20px; color:var(--muted); font-size:12px; line-height:1.8; }
+.home-pick-link { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; margin-top:auto; padding:13px 15px; background:var(--green); color:#fff; font-size:11px; font-weight:800; transition:background .2s,transform .2s; }
+.home-pick-link:hover { background:var(--green-dark); transform:translateY(-1px); }
+.home-pick-link span { font-size:16px; }
+.home-picks-bottom { display:flex; align-items:center; justify-content:space-between; gap:28px; margin-top:26px; padding-top:22px; border-top:1px solid var(--line); }
+.home-picks-bottom p { max-width:780px; margin:0; color:var(--muted); font-size:11px; line-height:1.8; }
+.home-picks-bottom p strong { font-weight:700; }
+.home-picks-bottom .button { flex:0 0 auto; white-space:nowrap; }
+@media (max-width:900px) {
+  .home-picks-heading { gap:30px; }
+  .home-picks-grid { gap:14px; }
+  .home-pick-image { height:185px; min-height:185px; padding:18px; }
+  .home-pick-copy { padding:18px; }
+  .home-pick-copy h3 { font-size:23px; }
+}
+@media (max-width:680px) {
+  .home-picks-heading { grid-template-columns:1fr; gap:16px; margin-bottom:24px; }
+  .home-picks-heading h2 { font-size:44px; }
+  .home-picks-intro { justify-self:start; }
+  .home-picks-intro p { font-size:13px; }
+  .home-picks-grid { grid-template-columns:1fr; gap:14px; }
+  .home-pick-card { display:grid; grid-template-columns:.8fr 1.2fr; }
+  .home-pick-image { height:auto; min-height:230px; padding:13px; }
+  .home-pick-badge { left:7px; top:7px; max-width:calc(100% - 14px); font-size:8px; padding:5px 6px; }
+  .home-pick-copy { padding:16px 14px; }
+  .home-pick-copy h3 { font-size:21px; }
+  .home-pick-copy > p:not(.home-pick-brand) { font-size:11px; line-height:1.65; }
+  .home-pick-link { padding:11px 10px; font-size:10px; }
+  .home-picks-bottom { flex-direction:column; align-items:stretch; gap:16px; }
+  .home-picks-bottom .button { width:100%; }
+}
+@media (max-width:430px) {
+  .home-pick-card { grid-template-columns:1fr; }
+  .home-pick-image { height:200px; min-height:200px; }
+  .home-pick-copy h3 { font-size:24px; }
+}
