@@ -10,13 +10,13 @@
   "theme_color": "#f7f5ef",
   "icons": [
     {
-      "src": "/assets/pwa-icon.svg?v=6",
+      "src": "/assets/pwa-icon.svg?v=7",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/assets/pwa-icon.svg?v=6",
+      "src": "/assets/pwa-icon.svg?v=7",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
