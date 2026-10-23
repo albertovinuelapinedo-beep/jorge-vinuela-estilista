@@ -1,7 +1,8 @@
-const CACHE_NAME = 'jorge-vinuela-pwa-v11';
+const CACHE_NAME = 'jorge-vinuela-pwa-v12';
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/la-seleccion-de-jorge/',
   '/styles.css',
   '/gallery.css',
   '/script.js',
@@ -29,11 +30,15 @@ self.addEventListener('fetch', (event) => {
   // Never cache API responses in the service worker; review data refreshes from Google.
   if (new URL(request.url).pathname.startsWith('/api/')) return;
   if (request.mode === 'navigate') {
+    const navigationPath = new URL(request.url).pathname;
+    const cacheKey = navigationPath === '/' ? '/' : navigationPath;
     event.respondWith(fetch(request).then((response) => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put('/', copy));
+      if (response.ok) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(cacheKey, copy));
+      }
       return response;
-    }).catch(() => caches.match(request).then((cached) => cached || caches.match('/'))));
+    }).catch(() => caches.match(cacheKey).then((cached) => cached || caches.match('/'))));
     return;
   }
   event.respondWith(caches.match(request).then((cached) => {
