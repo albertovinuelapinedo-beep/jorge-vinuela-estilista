@@ -29,6 +29,17 @@
       }
     });
   }
+
+  // Hide broken external product images gracefully in the homepage affiliate selection.
+  document.querySelectorAll('.home-pick-image img').forEach((img) => {
+    const markUnavailable = () => {
+      img.hidden = true;
+      img.closest('.home-pick-image')?.classList.add('image-unavailable');
+    };
+    img.addEventListener('error', markUnavailable);
+    if (img.complete && img.naturalWidth === 0) markUnavailable();
+  });
+
   const installButton = document.querySelector('#pwa-install');
   const helpDialog = document.querySelector('#pwa-help');
   const helpText = document.querySelector('#pwa-help-text');
