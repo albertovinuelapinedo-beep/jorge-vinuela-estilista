@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Viñuela Estilista",
+  "short_name": "Jorge Viñuela",
+  "description": "Peluquería unisex en San Vicente del Raspeig. Pide cita y consulta los trabajos del salón.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#f7f5ef",
+  "icons": [
+    {
+      "src": "/assets/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/pwa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
