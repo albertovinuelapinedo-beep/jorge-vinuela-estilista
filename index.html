@@ -8,35 +8,77 @@
   <meta name="apple-mobile-web-app-title" content="Jorge Viñuela">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="apple-touch-icon" href="/assets/pwa-icon.svg?v=6">
-  <meta name="description" content="Jorge Viñuela Estilista, peluquería unisex en San Vicente del Raspeig. Cortes, coloración, mechas y estilismo personalizado con cita previa. Contacta por WhatsApp o teléfono.">
+  <link rel="apple-touch-icon" href="/assets/pwa-icon.svg?v=7">
+  <meta name="description" content="Peluquería unisex en San Vicente del Raspeig: corte, peinado, coloración, mechas y balayage con asesoramiento personalizado. Pide cita por WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="Jorge Viñuela Estilista | Peluquería unisex en San Vicente">
-  <meta property="og:description" content="Cortes, color y estilismo con atención personal en San Vicente del Raspeig. Pide cita por WhatsApp o teléfono.">
-  <meta property="og:image" content="/assets/salon-interior.webp">
-  <meta name="robots" content="index, follow">
-  <title>Jorge Viñuela Estilista | Peluquería unisex en San Vicente</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=5">
+  <meta property="og:title" content="Peluquería unisex en San Vicente del Raspeig | Jorge Viñuela">
+  <meta property="og:description" content="Corte, peinado, coloración, mechas y balayage en San Vicente del Raspeig. Asesoramiento personalizado y cita por WhatsApp.">
+  <meta property="og:image" content="https://www.jorgevinuelaestilista.es/assets/salon-interior.webp">\n  <meta property="og:url" content="https://www.jorgevinuelaestilista.es/">\n  <meta property="og:site_name" content="Jorge Viñuela Estilista">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:title" content="Peluquería unisex en San Vicente del Raspeig | Jorge Viñuela">\n  <meta name="twitter:description" content="Corte, peinado, coloración, mechas y balayage en San Vicente del Raspeig. Pide cita por WhatsApp.">\n  <meta name="twitter:image" content="https://www.jorgevinuelaestilista.es/assets/salon-interior.webp">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>Peluquería unisex en San Vicente del Raspeig | Jorge Viñuela</title>\n  <link rel="canonical" href="https://www.jorgevinuelaestilista.es/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=7">
   <link rel="preload" as="image" href="assets/salon-interior.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="gallery.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HairSalon",
-    "name": "Jorge Viñuela Estilista",
-    "description": "Peluquería unisex con atención personalizada, cortes, coloración, mechas y estilismo en San Vicente del Raspeig.",
-    "telephone": "+34 644 37 27 56",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Calle Benlliure, 12",
-      "postalCode": "03690",
-      "addressLocality": "Sant Vicent del Raspeig",
-      "addressRegion": "Alicante",
-      "addressCountry": "ES"
-    },
-    "areaServed": "Sant Vicent del Raspeig, Alicante"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.jorgevinuelaestilista.es/#website",
+        "url": "https://www.jorgevinuelaestilista.es/",
+        "name": "Jorge Viñuela Estilista",
+        "inLanguage": "es-ES",
+        "publisher": { "@id": "https://www.jorgevinuelaestilista.es/#salon" }
+      },
+      {
+        "@type": "HairSalon",
+        "@id": "https://www.jorgevinuelaestilista.es/#salon",
+        "name": "Jorge Viñuela Estilista",
+        "url": "https://www.jorgevinuelaestilista.es/",
+        "description": "Peluquería unisex en San Vicente del Raspeig, Alicante. Corte y peinado, coloración, mechas, balayage y estilismo con asesoramiento personalizado y cita previa.",
+        "telephone": "+34644372756",
+        "logo": "https://www.jorgevinuelaestilista.es/assets/logo.png",
+        "image": [
+          "https://www.jorgevinuelaestilista.es/assets/salon-interior.webp",
+          "https://www.jorgevinuelaestilista.es/assets/trabajo-01.webp",
+          "https://www.jorgevinuelaestilista.es/assets/trabajo-02.webp"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Benlliure, 12",
+          "postalCode": "03690",
+          "addressLocality": "Sant Vicent del Raspeig",
+          "addressRegion": "Alicante",
+          "addressCountry": "ES"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Sant Vicent del Raspeig" },
+          { "@type": "AdministrativeArea", "name": "Alicante" }
+        ],
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Jorge+Vi%C3%B1uela+Estilista+Calle+Benlliure+12+Sant+Vicent+del+Raspeig",
+        "knowsAbout": [
+          "Peluquería unisex",
+          "Corte y peinado",
+          "Coloración capilar",
+          "Mechas",
+          "Balayage",
+          "Estilismo capilar"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de peluquería",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corte y peinado" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Coloración y mechas" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mechas y balayage" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estilismo unisex" } }
+          ]
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -62,9 +104,9 @@
     <section class="hero section-pad">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> TU PELUQUERÍA DE CONFIANZA</div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> PELUQUERÍA UNISEX · SAN VICENTE DEL RASPEIG</div>
           <h1>Tu estilo.<br><em>En buenas</em> manos.</h1>
-          <p class="hero-lede">Corte, color y estilismo con atención personal. Un espacio en San Vicente donde escuchar lo que buscas es el primer paso para encontrar tu estilo.</p>
+          <p class="hero-lede">Peluquería unisex en San Vicente del Raspeig, con servicios de corte y peinado, coloración, mechas y balayage. Te escuchamos y te asesoramos para encontrar un estilo que encaje contigo y cuidar tu cabello.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://wa.me/34644372756?text=Hola%2C%20Jorge.%20Me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20peluquer%C3%ADa.%20%C2%BFQu%C3%A9%20disponibilidad%20tienes%3F" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20l.9-4.7a8.5 8.5 0 1 1 16.6-3.6Z"/><path d="M8.7 8.2c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.8 1.8c.1.2 0 .4-.1.6l-.6.7c-.2.2-.2.4 0 .7.5.8 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.6-1.9.4-1-.2-2.3-.9-3.5-2-1.1-1-1.9-2.3-2.2-3.2-.3-.8 0-1.7.5-2.4Z"/></svg> Pedir cita por WhatsApp
@@ -77,7 +119,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo-frame"><img class="hero-photo" src="assets/salon-interior.webp" alt="Interior real de la peluquería Jorge Viñuela Estilista en San Vicente del Raspeig" width="1600" height="1200" fetchpriority="high"></div>
+          <div class="hero-photo-frame"><img class="hero-photo" src="assets/salon-interior.webp" alt="Interior de Jorge Viñuela Estilista, peluquería unisex en San Vicente del Raspeig" width="1600" height="1200" fetchpriority="high"></div>
           <div class="photo-caption"><span class="caption-mark">JV</span><span><strong>Tu espacio, tu estilo</strong><small>Calle Benlliure, 12 · San Vicente</small></span><span class="caption-arrow" aria-hidden="true">↗</span></div>
           <div class="hero-seal" aria-hidden="true"><span>DETALLE</span><b>&</b><span>ESTILO</span></div>
           <svg class="hero-spark" viewBox="0 0 90 90" aria-hidden="true"><path d="M45 0v90M0 45h90M13 13l64 64M77 13 13 77"/></svg>
@@ -87,19 +129,19 @@
     <section class="value-strip" aria-label="Nuestra forma de trabajar"><div class="container value-grid"><div><span class="value-num">01</span><span>Escuchar antes de cortar</span></div><div><span class="value-num">02</span><span>Color pensado para ti</span></div><div><span class="value-num">03</span><span>Trato cercano y honesto</span></div></div></section>
     <section class="services section-pad" id="servicios">
       <div class="container">
-        <div class="section-heading services-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> LO QUE HACEMOS</div><h2>Un buen estilo<br><em>empieza por ti.</em></h2></div><p>Cuéntanos qué te gustaría conseguir. Te ayudaremos a encontrar un corte, un color y un acabado que encajen contigo y con tu cabello.</p></div>
+        <div class="section-heading services-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> LO QUE HACEMOS</div><h2>Un buen estilo<br><em>empieza por ti.</em></h2></div><p>En nuestra peluquería de San Vicente del Raspeig te asesoramos sobre cortes, peinados, coloración y técnicas de iluminación para encontrar un resultado adaptado a tu cabello y al estilo que buscas.</p></div>
         <div class="service-grid">
-          <article class="service-card service-card-featured"><span class="service-index">01 / CORTE</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="14" cy="13" r="7"/><circle cx="14" cy="35" r="7"/><path d="m19 17 22 22M19 31 41 9M20 24l-7 0"/></svg></div><h3>Corte y peinado</h3><p>Desde mantener tu estilo hasta darle un giro. Escuchamos lo que te gusta y lo adaptamos a ti.</p><span class="service-line"></span></article>
-          <article class="service-card"><span class="service-index">02 / COLOR</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5C17 15 10 22 10 30a14 14 0 0 0 28 0C38 22 31 15 24 5Z"/><path d="M17 31c0 4 3 7 7 7"/></svg></div><h3>Coloración y mechas</h3><p>Matices naturales, luz y cambios de color estudiados para que el resultado tenga armonía.</p><span class="service-line"></span></article>
-          <article class="service-card"><span class="service-index">03 / TÉCNICA</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 28.5 18 42 22.5 28.5 27 24 41 19.5 27 6 22.5 19.5 18 24 5Z"/><path d="m38 5 1.5 4.5L44 11l-4.5 1.5L38 17l-1.5-4.5L32 11l4.5-1.5L38 5Z"/></svg></div><h3>Mechas y balayage</h3><p>Contrastes suaves y dimensión para dar movimiento al cabello, respetando el resultado que buscas.</p><span class="service-line"></span></article>
-          <article class="service-card"><span class="service-index">04 / ASESORAMIENTO</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 40s-16-9-16-21a9 9 0 0 1 16-5 9 9 0 0 1 16 5c0 12-16 21-16 21Z"/><path d="M16 23h5l3-6 4 13 3-7h4"/></svg></div><h3>Estilismo unisex</h3><p>Una atención cercana para mujeres y hombres, con recomendaciones claras y sin complicaciones.</p><span class="service-line"></span></article>
+          <article class="service-card service-card-featured"><span class="service-index">01 / CORTE</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="14" cy="13" r="7"/><circle cx="14" cy="35" r="7"/><path d="m19 17 22 22M19 31 41 9M20 24l-7 0"/></svg></div><h3>Corte y peinado</h3><p>Desde un corte de mantenimiento hasta un cambio de look. Escuchamos qué buscas y adaptamos el corte y el peinado a tu cabello y a tu estilo.</p><span class="service-line"></span></article>
+          <article class="service-card"><span class="service-index">02 / COLOR</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5C17 15 10 22 10 30a14 14 0 0 0 28 0C38 22 31 15 24 5Z"/><path d="M17 31c0 4 3 7 7 7"/></svg></div><h3>Coloración y mechas</h3><p>Coloración y mechas con matices naturales, reflejos y cambios de tono planificados según la base de tu cabello y el resultado que buscas.</p><span class="service-line"></span></article>
+          <article class="service-card"><span class="service-index">03 / TÉCNICA</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 28.5 18 42 22.5 28.5 27 24 41 19.5 27 6 22.5 19.5 18 24 5Z"/><path d="m38 5 1.5 4.5L44 11l-4.5 1.5L38 17l-1.5-4.5L32 11l4.5-1.5L38 5Z"/></svg></div><h3>Mechas y balayage</h3><p>Mechas y balayage para aportar luz, dimensión y movimiento al cabello. Hablamos contigo sobre el acabado que quieres antes de empezar.</p><span class="service-line"></span></article>
+          <article class="service-card"><span class="service-index">04 / ASESORAMIENTO</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 40s-16-9-16-21a9 9 0 0 1 16-5 9 9 0 0 1 16 5c0 12-16 21-16 21Z"/><path d="M16 23h5l3-6 4 13 3-7h4"/></svg></div><h3>Estilismo unisex</h3><p>Servicios de peluquería unisex para mujeres y hombres, con asesoramiento personal y recomendaciones claras para tu estilo.</p><span class="service-line"></span></article>
         </div>
         <div class="services-footnote"><span class="tiny-spark" aria-hidden="true">✳</span> ¿Tienes una idea en mente? <a href="https://wa.me/34644372756?text=Hola%2C%20Jorge.%20Quiero%20consultarte%20un%20servicio%20de%20peluquer%C3%ADa." target="_blank" rel="noopener noreferrer">Consúltanos por WhatsApp <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="gallery section-pad" id="galeria">
       <div class="container">
-        <div class="section-heading gallery-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TRABAJOS DEL SALÓN</div><h2>Ideas para tu<br><em>próximo look.</em></h2></div><p>Una selección de trabajos realizados en el salón. Guarda la foto que te guste y enséñasela a Jorge para hablar del resultado que quieres conseguir.</p></div>
+        <div class="section-heading gallery-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TRABAJOS DEL SALÓN</div><h2>Ideas para tu<br><em>próximo look.</em></h2></div><p>Descubre una selección de trabajos de peluquería realizados en San Vicente del Raspeig: cortes, peinados, tonos y técnicas de color. Guarda la foto que te guste y coméntala con Jorge para valorar el resultado que quieres conseguir.</p></div>
         <div class="gallery-grid" aria-label="Galería de trabajos de peluquería">
           <button class="gallery-item" type="button" data-gallery-index="0" aria-label="Ampliar fotografía: Rubio dorado"><img src="assets/trabajo-01.webp" alt="Trabajo de peluquería: rubio dorado" loading="lazy" width="800" height="1000"><span class="gallery-caption"><span><strong>Rubio dorado</strong><small>Color y acabado</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></span></button>
           <button class="gallery-item" type="button" data-gallery-index="1" aria-label="Ampliar fotografía: Rizos cobrizos"><img src="assets/trabajo-02.webp" alt="Trabajo de peluquería: rizos cobrizos" loading="lazy" width="800" height="1000"><span class="gallery-caption"><span><strong>Rizos cobrizos</strong><small>Rizos y color</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></span></button>
@@ -125,13 +167,13 @@
     <dialog class="gallery-lightbox" aria-label="Fotografía ampliada"><button class="lightbox-close" type="button" aria-label="Cerrar fotografía">×</button><button class="lightbox-prev" type="button" aria-label="Fotografía anterior">‹</button><figure><img src="" alt=""><figcaption></figcaption></figure><button class="lightbox-next" type="button" aria-label="Fotografía siguiente">›</button></dialog>
     <section class="about section-pad" id="salon">
       <div class="container about-grid">
-        <div class="about-art"><div class="about-photo"><img src="assets/salon-interior.webp" alt="Zona de trabajo y espejos del salón" loading="lazy" width="1600" height="1200"></div><div class="about-number"><span>UN SALÓN</span><strong>con<br>personalidad</strong><i>San Vicente del Raspeig</i></div><div class="about-vertical" aria-hidden="true">JORGE VIÑUELA · ESTILISTA</div></div>
-        <div class="about-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> MÁS QUE UN CORTE</div><h2>La diferencia está<br>en <em>los detalles.</em></h2><p class="about-lede">Cada cabello tiene su forma, su textura y su historia. Por eso, antes de empezar, lo importante es hablar, escuchar y entender qué quieres conseguir.</p><p>En el salón de Jorge Viñuela, en San Vicente del Raspeig, encontrarás un trato directo y un asesoramiento personal para cuidar tu estilo sin perder lo que te hace ser tú.</p><div class="signature"><span class="signature-rule"></span><span><strong>Jorge Viñuela</strong><small>Estilista · Peluquería unisex</small></span></div><a class="button button-outline-light" href="https://wa.me/34644372756?text=Hola%2C%20Jorge.%20Me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20peluquer%C3%ADa." target="_blank" rel="noopener noreferrer">Hablemos de tu estilo <span aria-hidden="true">↗</span></a></div>
+        <div class="about-art"><div class="about-photo"><img src="assets/salon-interior.webp" alt="Tocadores y zona de trabajo de la peluquería Jorge Viñuela en San Vicente del Raspeig" loading="lazy" width="1600" height="1200"></div><div class="about-number"><span>UN SALÓN</span><strong>con<br>personalidad</strong><i>San Vicente del Raspeig</i></div><div class="about-vertical" aria-hidden="true">JORGE VIÑUELA · ESTILISTA</div></div>
+        <div class="about-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> MÁS QUE UN CORTE</div><h2>La diferencia está<br>en <em>los detalles.</em></h2><p class="about-lede">Cada cabello tiene su forma, su textura y su historia. Por eso, antes de empezar, lo importante es hablar, escuchar y entender qué quieres conseguir.</p><p>En Jorge Viñuela Estilista, peluquería unisex en San Vicente del Raspeig, trabajamos corte y peinado, coloración, mechas y balayage con trato directo y asesoramiento personal. Te ayudamos a encontrar un estilo que encaje contigo y respete las características de tu cabello.</p><div class="signature"><span class="signature-rule"></span><span><strong>Jorge Viñuela</strong><small>Estilista · Peluquería unisex</small></span></div><a class="button button-outline-light" href="https://wa.me/34644372756?text=Hola%2C%20Jorge.%20Me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20peluquer%C3%ADa." target="_blank" rel="noopener noreferrer">Hablemos de tu estilo <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="contact section-pad" id="ubicacion">
       <div class="container">
-        <div class="section-heading contact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> NOS VEMOS EN EL SALÓN</div><h2>Estamos cerca.<br><em>Y al otro lado del móvil.</em></h2></div><p>¿Quieres consultar disponibilidad o preguntar por un servicio? Escríbenos o llámanos y te ayudaremos a organizar tu visita.</p></div>
+        <div class="section-heading contact-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> NOS VEMOS EN EL SALÓN</div><h2>Estamos cerca.<br><em>Y al otro lado del móvil.</em></h2></div><p>¿Buscas peluquería unisex en San Vicente del Raspeig o quieres consultar un servicio de corte, peinado, coloración, mechas o balayage? Escríbenos o llámanos y te ayudaremos a consultar disponibilidad y organizar tu visita.</p></div>
         <div class="contact-grid">
           <article class="contact-card contact-card-location"><div class="contact-card-top"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="card-label">VEN A VERNOS</span></div><h3>Tu peluquería en San Vicente</h3><address>Calle Benlliure, 12<br>03690 Sant Vicent del Raspeig, Alicante</address><a class="card-link" href="https://www.google.com/maps/search/?api=1&amp;query=Jorge+Vi%C3%B1uela+estilista+Calle+Benlliure+12+San+Vicente+del+Raspeig" target="_blank" rel="noopener noreferrer">Abrir en Google Maps <span aria-hidden="true">↗</span></a><div class="location-doodle" aria-hidden="true"><span>JV</span><svg viewBox="0 0 200 70"><path d="M1 58C35 26 55 64 85 35S135 6 153 34s29 5 46-15"/><circle cx="153" cy="34" r="5"/></svg></div></article>
           <article class="contact-card contact-card-whatsapp"><div class="contact-card-top"><span class="contact-icon contact-icon-green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20l.9-4.7a8.5 8.5 0 1 1 16.6-3.6Z"/><path d="M8.7 8.2c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.8 1.8c.1.2 0 .4-.1.6l-.6.7c-.2.2-.2.4 0 .7.5.8 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.6-1.9.4-1-.2-2.3-.9-3.5-2-1.1-1-1.9-2.3-2.2-3.2-.3-.8 0-1.7.5-2.4Z"/></svg></span><span class="card-label">CITA Y CONSULTAS</span></div><h3>Escríbenos por WhatsApp</h3><p>Cuéntanos qué te gustaría hacerte y te responderemos para consultar disponibilidad.</p><a class="button button-dark" href="https://wa.me/34644372756?text=Hola%2C%20Jorge.%20Me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20peluquer%C3%ADa.%20%C2%BFQu%C3%A9%20disponibilidad%20tienes%3F" target="_blank" rel="noopener noreferrer">Abrir WhatsApp <span aria-hidden="true">↗</span></a><div class="whatsapp-note"><span class="status-dot"></span> Atención con cita previa</div></article>
