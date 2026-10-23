@@ -310,8 +310,16 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
 .home-picks-heading h2 em { color:var(--leaf); }
 .home-picks-intro { max-width:475px; justify-self:end; }
 .home-picks-intro p { color:var(--muted); font-size:14px; line-height:1.9; margin:0 0 13px; }
-.home-picks-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:stretch; }
-.home-pick-card { display:flex; flex-direction:column; min-width:0; background:var(--white); border:1px solid var(--line); transition:transform .2s ease,box-shadow .2s ease; }
+.home-picks-carousel { display:grid; grid-template-columns:40px minmax(0,1fr) 40px; align-items:center; gap:12px; }
+.home-picks-viewport { min-width:0; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+.home-picks-viewport::-webkit-scrollbar { display:none; }
+.home-picks-grid { display:flex; position:relative; gap:20px; align-items:stretch; }
+.home-pick-card { display:flex; flex:0 0 calc((100% - 40px)/3); flex-direction:column; min-width:0; scroll-snap-align:start; scroll-snap-stop:always; background:var(--white); border:1px solid var(--line); transition:transform .2s ease,box-shadow .2s ease; }
+.home-picks-arrow { display:grid; place-items:center; width:40px; height:40px; padding:0; border:1px solid #c4d0be; border-radius:50%; background:var(--white); color:var(--green-dark); font:400 30px/1 var(--serif); cursor:pointer; transition:background .2s,color .2s,opacity .2s; }
+.home-picks-arrow:hover:not(:disabled),.home-picks-arrow:focus-visible { background:var(--green); color:#fff; outline:2px solid var(--leaf); outline-offset:2px; }
+.home-picks-arrow:disabled { opacity:.32; cursor:default; }
+.home-picks-carousel-meta { display:flex; justify-content:space-between; align-items:center; gap:14px; margin:12px 52px 0; color:var(--muted); font-size:11px; }
+#home-picks-status { color:var(--green); font-weight:800; font-variant-numeric:tabular-nums; }
 .home-pick-card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(35,48,38,.08); }
 .home-pick-image { display:grid; place-items:center; position:relative; min-height:210px; height:210px; padding:24px; overflow:hidden; background:var(--paper-deep); }
 .home-pick-image img { width:100%; height:100%; object-fit:contain; transition:transform .25s ease; }
@@ -332,7 +340,11 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
 .home-picks-bottom .button { flex:0 0 auto; white-space:nowrap; }
 @media (max-width:900px) {
   .home-picks-heading { gap:30px; }
+  .home-picks-carousel { grid-template-columns:34px minmax(0,1fr) 34px; gap:9px; }
   .home-picks-grid { gap:14px; }
+  .home-pick-card { flex-basis:calc((100% - 14px)/2); }
+  .home-picks-arrow { width:34px; height:34px; font-size:25px; }
+  .home-picks-carousel-meta { margin-left:43px; margin-right:43px; }
   .home-pick-image { height:185px; min-height:185px; padding:18px; }
   .home-pick-copy { padding:18px; }
   .home-pick-copy h3 { font-size:23px; }
@@ -342,9 +354,12 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
   .home-picks-heading h2 { font-size:44px; }
   .home-picks-intro { justify-self:start; }
   .home-picks-intro p { font-size:13px; }
-  .home-picks-grid { grid-template-columns:1fr; gap:14px; }
-  .home-pick-card { display:grid; grid-template-columns:.8fr 1.2fr; }
-  .home-pick-image { height:auto; min-height:230px; padding:13px; }
+  .home-picks-carousel { grid-template-columns:28px minmax(0,1fr) 28px; gap:5px; }
+  .home-picks-grid { gap:14px; }
+  .home-pick-card { display:flex; flex:0 0 100%; }
+  .home-picks-arrow { width:28px; height:32px; font-size:22px; }
+  .home-picks-carousel-meta { margin-left:33px; margin-right:33px; font-size:10px; }
+  .home-pick-image { height:180px; min-height:180px; padding:13px; }
   .home-pick-badge { left:7px; top:7px; max-width:calc(100% - 14px); font-size:8px; padding:5px 6px; }
   .home-pick-copy { padding:16px 14px; }
   .home-pick-copy h3 { font-size:21px; }
@@ -354,7 +369,8 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
   .home-picks-bottom .button { width:100%; }
 }
 @media (max-width:430px) {
-  .home-pick-card { grid-template-columns:1fr; }
-  .home-pick-image { height:200px; min-height:200px; }
+  .home-pick-card { flex-basis:100%; }
+  .home-pick-image { height:185px; min-height:185px; }
   .home-pick-copy h3 { font-size:24px; }
+  .home-picks-carousel-meta { margin-left:33px; margin-right:33px; }
 }
