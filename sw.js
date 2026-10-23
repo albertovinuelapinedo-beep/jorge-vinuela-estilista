@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jorge-vinuela-pwa-v13';
+const CACHE_NAME = 'jorge-vinuela-pwa-v14';
 const CORE_ASSETS = [
   '/',
   '/index.html',
