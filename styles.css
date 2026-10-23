@@ -294,3 +294,10 @@ h1 em,h2 em { color:var(--leaf); font-weight:400; }
 .pwa-help-close { position:absolute; top:8px; right:10px; border:0; background:transparent; font-size:26px; color:var(--green-dark); cursor:pointer; }
 .pwa-help-ok { margin-top:6px; }
 @media (max-width:820px) { .pwa-install-button { width:100%; text-align:center; margin-top:4px; } }
+
+/* PWA install is only shown on phones, in the fixed contact bar. */
+.pwa-install-button { display:none !important; }
+.mobile-install { display:none; appearance:none; align-items:center; justify-content:center; flex:1; gap:5px; min-height:44px; padding:0 7px; border:1px solid #aebead; border-radius:8px; background:#f7f5ef; color:var(--green-dark); font:700 12px/1.2 var(--sans); cursor:pointer; white-space:nowrap; }
+.mobile-install svg { width:17px; height:17px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.mobile-install:focus-visible { outline:2px solid var(--leaf); outline-offset:2px; }
+@media (max-width:820px) { .mobile-install { display:flex; } }
