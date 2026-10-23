@@ -96,3 +96,6 @@ body { padding-bottom:90px; }
  .mobile-contact-bar { gap:3px; }
  .mobile-contact-bar a,.mobile-contact-bar .mobile-install { font-size:12px; padding-left:2px; padding-right:2px; }
 }
+
+/* Installation action is intentionally the fourth/rightmost item in the mobile bar. */
+@media (max-width:820px) { .mobile-contact-bar { display:flex; } .mobile-contact-bar .mobile-install { order:4; } .mobile-contact-bar .mobile-call { order:1; } .mobile-contact-bar .mobile-message { order:2; } .mobile-contact-bar .mobile-appointment { order:3; } }
