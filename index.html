@@ -30,6 +30,7 @@
   <link rel="preload" as="image" href="assets/salon-interior.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="reviews.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -136,7 +137,28 @@
       </div><div class="hero-bottom-line" aria-hidden="true"></div>
     </section>
     <section class="value-strip" aria-label="Nuestra forma de trabajar"><div class="container value-grid"><div><span class="value-num">01</span><span>Escuchar antes de cortar</span></div><div><span class="value-num">02</span><span>Color pensado para ti</span></div><div><span class="value-num">03</span><span>Trato cercano y honesto</span></div></div></section>
-    <section class="services section-pad" id="servicios">
+        <section class="reviews-section section-pad" id="opiniones-google" aria-labelledby="reviews-title" hidden>
+      <div class="container">
+        <div class="reviews-header">
+          <div class="reviews-heading">
+            <div class="eyebrow"><span class="eyebrow-line"></span> OPINIONES REALES EN GOOGLE</div>
+            <h2 id="reviews-title">Lo que cuentan quienes nos visitan.</h2>
+            <p>Reseñas de clientes que han valorado con cinco estrellas y han compartido su experiencia por escrito.</p>
+          </div>
+          <div class="reviews-summary" id="reviews-summary" aria-label="Valoración general de Google"></div>
+        </div>
+        <div class="reviews-carousel" aria-label="Carrusel de reseñas de cinco estrellas" aria-roledescription="carrusel">
+          <button class="reviews-control" type="button" data-review-direction="-1" aria-label="Ver reseña anterior">‹</button>
+          <div class="reviews-viewport">
+            <div class="reviews-track" id="reviews-track" aria-live="polite"></div>
+          </div>
+          <button class="reviews-control" type="button" data-review-direction="1" aria-label="Ver reseña siguiente">›</button>
+        </div>
+        <div class="reviews-dots" id="reviews-dots" aria-label="Elegir reseña"></div>
+        <div class="reviews-footer"><span>Opiniones reales publicadas en Google</span><a class="reviews-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=Jorge+Vi%C3%B1uela+Estilista+Calle+Benlliure+12+Sant+Vicent+del+Raspeig" target="_blank" rel="noopener noreferrer">Leer todas las reseñas en Google ↗</a></div>
+      </div>
+    </section>
+<section class="services section-pad" id="servicios">
       <div class="container">
         <div class="section-heading services-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> LO QUE HACEMOS</div><h2>Un buen estilo<br><em>empieza por ti.</em></h2></div><p>En nuestra peluquería de San Vicente del Raspeig te asesoramos sobre cortes, peinados, coloración y técnicas de iluminación para encontrar un resultado adaptado a tu cabello y al estilo que buscas.</p></div>
         <div class="service-grid">
@@ -202,5 +224,6 @@
   <dialog class="pwa-help-dialog" id="pwa-help" aria-labelledby="pwa-help-title"><button class="pwa-help-close" type="button" aria-label="Cerrar instrucciones">×</button><h2 id="pwa-help-title">Añadir Jorge Viñuela a tu móvil</h2><p id="pwa-help-text">Sigue las instrucciones del navegador para añadir esta web a la pantalla de inicio.</p><button class="button button-primary pwa-help-ok" type="button">Entendido</button></dialog>
   <script src="script.js" defer></script>
   <script src="gallery.js" defer></script>
+  <script src="reviews.js" defer></script>
 </body>
 </html>
