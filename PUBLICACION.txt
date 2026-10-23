@@ -1,0 +1,21 @@
+PUBLICAR LA WEB DE JORGE VIÑUELA ESTILISTA
+
+La web es estática y no usa React, Next.js, dependencias, claves API ni servidor propio.
+
+1) DESCOMPRIME EL ZIP en tu ordenador.
+2) En GitHub, crea un repositorio nuevo llamado: jorge-vinuela-estilista.
+3) Sube los archivos y la carpeta assets a la raíz del repositorio. Es importante que index.html quede en la raíz, no dentro de una carpeta adicional.
+4) Entra en Vercel y pulsa Add New > Project.
+5) Importa el repositorio jorge-vinuela-estilista.
+6) Deja el framework como Other (o que Vercel detecte sitio estático). No pongas build command ni output directory.
+7) Pulsa Deploy.
+
+Vercel te dará una dirección .vercel.app. Si luego conectas un dominio propio, podremos actualizar las etiquetas de SEO y el sitemap.
+
+ANTES DE PUBLICAR DEFINITIVAMENTE:
+- Completar la información fiscal del titular en aviso-legal.html.
+- Confirmar si quiere publicar una dirección de correo comercial; por ahora se ha omitido el Gmail de la cuenta publicitaria.
+- Confirmar que 644 37 27 56 es el teléfono correcto de llamadas y WhatsApp.
+- Confirmar que los servicios descritos están actualizados.
+- Confirmar el enlace de Google Maps y el correo de contacto.
+- El horario no aparece en la página porque los directorios públicos consultados discrepan. Añadirlo solo después de confirmarlo con Jorge.
