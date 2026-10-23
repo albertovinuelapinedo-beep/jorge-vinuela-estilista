@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jorge-vinuela-pwa-v8';
+const CACHE_NAME = 'jorge-vinuela-pwa-v9';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -6,6 +6,8 @@ const CORE_ASSETS = [
   '/gallery.css',
   '/script.js',
   '/gallery.js',
+  '/reviews.js',
+  '/reviews.css',
   '/manifest.webmanifest',
   '/assets/pwa-icon.svg?v=7',
   '/assets/favicon.svg?v=7',
@@ -24,6 +26,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  // Never cache API responses in the service worker; review data refreshes from Google.
+  if (new URL(request.url).pathname.startsWith('/api/')) return;
   if (request.mode === 'navigate') {
     event.respondWith(fetch(request).then((response) => {
       const copy = response.clone();
