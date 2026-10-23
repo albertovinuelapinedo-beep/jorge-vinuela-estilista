@@ -1,2 +1,1 @@
-User-agent: *
-Allow: /
+User-agent: *\nAllow: /\n\nSitemap: https://www.jorgevinuelaestilista.es/sitemap.xml\n
