@@ -5,15 +5,33 @@
   const summary = document.querySelector('#reviews-summary');
   if (!section || !track || !dots || !summary) return;
 
-  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Jorge+Vi%C3%B1uela+Estilista+Calle+Benlliure+12+Sant+Vicent+del+Raspeig';
-  const previous = section.querySelector('[data-review-direction="-1"]');
-  const next = section.querySelector('[data-review-direction="1"]');
-  const carousel = section.querySelector('.reviews-carousel');
-  let reviews = [];
-  let index = 0;
-  let timer = null;
-  let pauseAuto = false;
-  let lastReviewId = null;
+  const reviews = [
+    {
+      authorName: "Alexandra Fdez",
+      dateLabel: "Hace 6 meses",
+      comment: "Me ha gustado mucho el trato y la profesionalidad que se nota que tiene, me ha dejado estupenda y juraría que puede peinarte hasta con los ojos cerrados jeje, ¡un acierto!!!"
+    },
+    {
+      authorName: "Mayte Golf",
+      dateLabel: "Hace 6 meses",
+      comment: "Contentísima, me dejé aconsejar por Jorge y todo un acierto... mi pelo ha vuelto a la vida y voy a seguir yendo a él porque es todo un profesional, nada de venderte productos y tratamientos que no necesitas, él te recomienda en base a lo que tu pelo necesita, sin excesos... un 10!!!!"
+    },
+    {
+      authorName: "Maria Almendros",
+      dateLabel: "Hace 7 meses",
+      comment: "Mi peluquería de confianza. Recomiendo a Jorge por ser un gran profesional, sincero y porque siempre acabo contenta con los resultados 😍…"
+    },
+    {
+      authorName: "Patricia Fuster Bosch",
+      dateLabel: "Hace un año",
+      comment: "Recomendable 100x100 en todos los aspectos, te asesora lo mejor para tu estilo en corte, tinte, peinado... Buenas manos y productos."
+    },
+    {
+      authorName: "Javier Mateo",
+      dateLabel: "Hace un año",
+      comment: "Encantado con Jorge. Sin colas, no te hace esperar, servicio rápido y muy bueno. Ya me ha cambiado el look un par de veces... Y las que quedan."
+    }
+  ];
 
   const make = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -22,21 +40,23 @@
     return node;
   };
 
-  const formatDate = (value) => {
-    if (!value) return '';
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return '';
-    return new Intl.DateTimeFormat('es-ES', { month: 'long', year: 'numeric' }).format(date);
+  const previous = section.querySelector('[data-review-direction="-1"]');
+  const next = section.querySelector('[data-review-direction="1"]');
+  const carousel = section.querySelector('.reviews-carousel');
+  let index = 0;
+  let timer = null;
+  let pauseAuto = false;
+
+  const show = (nextIndex) => {
+    index = (nextIndex + reviews.length) % reviews.length;
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    [...dots.children].forEach((dot, dotIndex) => {
+      if (dotIndex === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
   };
 
-  const render = (data) => {
-    reviews = data.reviews;
-    if (!reviews.length) {
-      section.hidden = true;
-      return;
-    }
-    index = Math.max(0, reviews.findIndex((review) => review.id === lastReviewId));
-    if (index < 0) index = 0;
+  const render = () => {
     section.hidden = false;
     track.replaceChildren();
     dots.replaceChildren();
@@ -58,13 +78,10 @@
       const author = make('div', 'review-card-author');
       const mark = make('span', 'review-card-author-mark', 'G');
       mark.setAttribute('aria-hidden', 'true');
-      const authorText = make('span', '', review.authorName);
-      author.append(mark, authorText);
-      const date = formatDate(review.createTime);
-      if (date) {
-        const dateNode = make('span', 'review-card-date', ' · ' + date);
-        authorText.append(dateNode);
-      }
+      const authorName = make('span', '', review.authorName);
+      const dateNode = make('span', 'review-card-date', ' · ' + review.dateLabel);
+      authorName.append(dateNode);
+      author.append(mark, authorName);
       card.append(top, comment, author);
       track.append(card);
 
@@ -75,28 +92,13 @@
       dots.append(dot);
     });
 
-    const rating = typeof data.averageRating === 'number' ? data.averageRating.toLocaleString('es-ES', { maximumFractionDigits: 1 }) : '';
-    summary.replaceChildren();
-    summary.append(
-      make('span', 'reviews-summary-label', 'Valoración general en Google'),
-      make('span', 'reviews-summary-rating', rating ? rating + ' / 5' : 'Google'),
+    summary.replaceChildren(
+      make('span', 'reviews-summary-label', 'Opiniones seleccionadas'),
+      make('span', 'reviews-summary-rating', '5 reseñas'),
       make('span', 'reviews-summary-stars', '★★★★★'),
-      make('span', 'reviews-summary-count', Number(data.totalReviewCount || 0).toLocaleString('es-ES') + ' opiniones')
+      make('span', 'reviews-summary-count', 'Todas de cinco estrellas')
     );
-    lastReviewId = reviews[index] ? reviews[index].id : null;
-    show(index);
-    startAuto();
-  };
-
-  const show = (nextIndex) => {
-    if (!reviews.length) return;
-    index = (nextIndex + reviews.length) % reviews.length;
-    lastReviewId = reviews[index].id;
-    track.style.transform = 'translateX(-' + (index * 100) + '%)';
-    [...dots.children].forEach((dot, dotIndex) => {
-      if (dotIndex === index) dot.setAttribute('aria-current', 'true');
-      else dot.removeAttribute('aria-current');
-    });
+    show(0);
   };
 
   const startAuto = () => {
@@ -116,29 +118,6 @@
     if (!carousel.contains(event.relatedTarget)) pauseAuto = false;
   });
 
-  const load = async () => {
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'GET',
-        headers: { Accept: 'application/json' },
-        cache: 'no-store'
-      });
-      if (!response.ok) throw new Error('Google reviews unavailable');
-      const data = await response.json();
-      if (!Array.isArray(data.reviews)) throw new Error('Invalid reviews payload');
-      // Extra client-side guard: never render ratings below five or comments without text.
-      data.reviews = data.reviews.filter((review) =>
-        review.rating === 5 && typeof review.comment === 'string' && review.comment.trim().length > 0
-      );
-      render(data);
-    } catch (error) {
-      // Keep the section hidden when credentials/API approval are not configured.
-      section.hidden = true;
-      console.info('Google review carousel is waiting for the official API connection.');
-    }
-  };
-
-  load();
-  // The endpoint caches its Google response for 15 minutes; this refreshes a long-open page too.
-  window.setInterval(load, 15 * 60 * 1000);
+  render();
+  startAuto();
 })();
